@@ -41,3 +41,21 @@ User Story:
 Опис: Клієнт робить HTTP GET-запит на URL "/games/search?genre=action&year=2023", сервер обробляє запит, виконує пошук ігор за вказаними критеріями (жанр, рік випуску) у базі даних і відправляє результат клієнту.
 Запит HTTP: GET /games/search?genre=action&year=2023
 Діаграма отримання списку ігор:
+
+
+Technologies
+
+1. Logic
+- AutoMapper
+
+2. Data
+- FluentValidation.AspNetCore
+- Microsoft.AspNetCore.Identity.EntityFrameworkCore
+- Microsoft.EntityFrameworkCore
+- Microsoft.EntityFrameworkCore.SqlServer
+- Microsoft.EntityFrameworkCore.Tools
+
+3. Web
+- AutoMapper.Extensions.Microsoft.DependencyInjection
+- Microsoft.AspNetCore.OpenApi
+- Microsoft.EntityFrameworkCore.Design
