@@ -12,4 +12,8 @@
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PC&amp;ConsoleGames.Infrastructure\PC&amp;ConsoleGames.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
