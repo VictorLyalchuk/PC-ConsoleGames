@@ -10,9 +10,9 @@ namespace PC_ConsoleGames.Infrastructure.Entities
     public class Genre
     {
         [Key]
-        int Id { get; set; }
+        public int Id { get; set; }
         [Required]
-        string Name { get; set; } = null;
+        public string Name { get; set; } = null;
         public IEnumerable<Game> Games { get; set; }
 
     }
