@@ -16,10 +16,10 @@ namespace PC_ConsoleGames.Infrastructure.Entities
         public string Publisher { get; set; }
         public IEnumerable<Genre> Genres { get; set; }
         public IEnumerable<Language> Languages { get; set; }
-        public IFormFile Poster { get; set; }
-        public string Description { get; set; }
-        public string SystemRequiements { get; set; }
-        public double Raiting { get; set; }
+        public string? Poster { get; set; }
+        public string? Description { get; set; }
+        public string? SystemRequirements { get; set; }
+        public double Rating { get; set; }
 
     }
 }

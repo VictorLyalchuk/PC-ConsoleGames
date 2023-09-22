@@ -10,12 +10,12 @@ namespace PC_ConsoleGames.Infrastructure.Entities
     public class Language
     {
         [Key]
-        int Id { get; set; }
+        public int Id { get; set; }
         [Required]
-        string Name { get; set; } = null;
-        bool LanguageInterface { get; set; }
-        bool LanguageFullAudio { get; set; }
-        bool LanguageSubtitles { get; set; }
+        public string Name { get; set; } = null;
+        public bool LanguageInterface { get; set; }
+        public bool LanguageFullAudio { get; set; }
+        public bool LanguageSubtitles { get; set; }
         public IEnumerable<Game> Games { get; set; }
 
     }
