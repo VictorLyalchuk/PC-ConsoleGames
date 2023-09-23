@@ -17,7 +17,7 @@ namespace PC_ConsoleGames.Core.DTOs
         public string Publisher { get; set; }
         public string? ImagePath { get; set; }
         public string Description { get; set; }
-        public string SystemRequiements { get; set; }
-        public double Raiting { get; set; }
+        public string SystemRequirements { get; set; }
+        public double Rating { get; set; }
     }
 }

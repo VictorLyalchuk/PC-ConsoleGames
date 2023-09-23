@@ -14,9 +14,9 @@ namespace PC_ConsoleGames.Core.DTOs
         public DateTime ReleaseDate { get; set; }
         public string Developer { get; set; }
         public string Publisher { get; set; }
-        public IFormFile Poster { get; set; }
-        public string Description { get; set; }
-        public string SystemRequiements { get; set; }
-        public double Raiting { get; set; }
+        public string? Poster { get; set; }
+        public string? Description { get; set; }
+        public string? SystemRequirements { get; set; }
+        public double Rating { get; set; }
     }
 }

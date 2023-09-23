@@ -1,11 +1,45 @@
+using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi.Models;
+using System.Text.Json.Serialization;
+
+
+using FluentValidation.AspNetCore;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+//get connection string
+string connection = builder.Configuration.GetConnectionString("SommeConnection") ?? throw new InvalidOperationException("Connection string 'ShopMVCConnection' not found.");
+
+// builder.Services.AddDbContext(connection); 
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles); ;
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.MapType<TimeSpan>(() => new OpenApiSchema
+    {
+        Type = "string",
+        Example = new OpenApiString("00:00:00")
+    });
+});
+
+
+// builder.Services.AddIdentity();
+//added using extensions
+// builder.Services.AddRepository();
+// builder.Services.AddValidators();
+// builder.Services.AddAutoMapper();
+
+// builder.Services.AddCustomServices();
 
 var app = builder.Build();
 

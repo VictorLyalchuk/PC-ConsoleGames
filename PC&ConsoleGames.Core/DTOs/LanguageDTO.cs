@@ -12,8 +12,5 @@ namespace PC_ConsoleGames.Core.DTOs
     {
         int Id { get; set; }
         string Name { get; set; } = null;
-        bool LanguageInterface { get; set; }
-        bool LanguageFullAudio { get; set; }
-        bool LanguageSubtitles { get; set; }
     }
 }
