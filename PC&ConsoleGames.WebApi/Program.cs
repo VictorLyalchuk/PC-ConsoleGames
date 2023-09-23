@@ -1,13 +1,9 @@
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
 using System.Text.Json.Serialization;
-
-
-using FluentValidation.AspNetCore;
-using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-
-
+using PC_ConsoleGames.Infrastructure;
+using PC_ConsoleGames.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,11 +29,11 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 
-// builder.Services.AddIdentity();
+builder.Services.AddIdentity();
 //added using extensions
-// builder.Services.AddRepository();
-// builder.Services.AddValidators();
-// builder.Services.AddAutoMapper();
+builder.Services.AddRepository();
+builder.Services.AddValidators();
+builder.Services.AddAutoMapper();
 
 // builder.Services.AddCustomServices();
 
