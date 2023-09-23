@@ -18,14 +18,18 @@ namespace PC_ConsoleGames.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.Entity<Game>().HasData(SeedData.GetCategory());
-            //modelBuilder.Entity<Genre>().HasData(SeedData.GetProduct());
-            //modelBuilder.Entity<Language>().HasData(SeedData.GetProduct());
+            modelBuilder.Entity<Game>().HasData(SeedData.GetGames());
+            modelBuilder.Entity<Genre>().HasData(SeedData.GetGenres());
+            modelBuilder.Entity<Language>().HasData(SeedData.GetLanguages());
+            modelBuilder.Entity<GameGenre>().HasData(SeedData.GetGamesGenres());
+            modelBuilder.Entity<GameLanguage>().HasData(SeedData.GetGamesLanguages());
 
         }
 
         public DbSet<Game> Games { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Language> Languages { get; set; }
+        public DbSet<GameGenre> GamesGenres { get; set; }
+        public DbSet<GameLanguage> GamesLanguages { get; set; }
     }
 }
