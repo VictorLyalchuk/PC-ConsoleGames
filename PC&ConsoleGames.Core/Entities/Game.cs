@@ -1,4 +1,6 @@
-﻿namespace PC_ConsoleGames.Core.Entities
+﻿using System.Runtime.Serialization;
+
+namespace PC_ConsoleGames.Core.Entities
 {
     public class Game
     {
