@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace PC_ConsoleGames.Infrastructure.Entities
+namespace PC_ConsoleGames.Core.Entities
 {
     public class Genre
     {
@@ -13,7 +8,7 @@ namespace PC_ConsoleGames.Infrastructure.Entities
         public int Id { get; set; }
         [Required]
         public string Name { get; set; } = null;
-        public IEnumerable<Game> Games { get; set; }
+        public IEnumerable<GameGenre> Games { get; set; }
 
     }
 }

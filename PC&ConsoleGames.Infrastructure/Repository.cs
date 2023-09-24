@@ -1,22 +1,18 @@
 ﻿using Ardalis.Specification;
 using Ardalis.Specification.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using PC_ConsoleGames.Core.Interfaces;
+using PC_ConsoleGames.Infrastructure.Data;
 
 namespace PC_ConsoleGames.Infrastructure
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        internal DbContext _context;
+        internal GameDBContext _context;
         internal DbSet<TEntity> dbSet;
 
-        public Repository(DbContext context)
+        public Repository(GameDBContext context)
         {
             _context = context;
             dbSet = context.Set<TEntity>();
@@ -97,15 +93,10 @@ namespace PC_ConsoleGames.Infrastructure
         {
             return await ApplySpecification(specification).ToListAsync();
         }
-
         public async Task<TEntity?> GetItemBySpec(ISpecification<TEntity> specification)
         {
             return await ApplySpecification(specification).FirstOrDefaultAsync();
         }
-
-        // select... from... join... join... where.. order by
-        //
-
         private IQueryable<TEntity> ApplySpecification(ISpecification<TEntity> specification)
         {
             var evaluator = new SpecificationEvaluator();

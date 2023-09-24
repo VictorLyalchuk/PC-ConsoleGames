@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-using PC_ConsoleGames.Infrastructure.Entities;
+using PC_ConsoleGames.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +19,7 @@ namespace PC_ConsoleGames.Core.DTOs
         public string Description { get; set; }
         public string SystemRequirements { get; set; }
         public double Rating { get; set; }
+        public IEnumerable<GenreDTO> Genres { get; set; }
+        public IEnumerable<LanguageDTO> Languages { get; set; }
     }
 }

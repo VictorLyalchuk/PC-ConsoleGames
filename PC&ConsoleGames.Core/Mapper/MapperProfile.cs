@@ -1,5 +1,5 @@
 ﻿using PC_ConsoleGames.Core.DTOs;
-using PC_ConsoleGames.Infrastructure.Entities;
+using PC_ConsoleGames.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PC_ConsoleGames.Core.Mapper
 {
-    public class MapperProfile:AutoMapper.Profile
+    public class MapperProfile : AutoMapper.Profile
     {
         public MapperProfile()
         {
@@ -18,7 +18,8 @@ namespace PC_ConsoleGames.Core.Mapper
             CreateMap<Language,LanguageDTO>().
                 ReverseMap();
 
-            CreateMap<Game,GameDTO>()
+            CreateMap<Game,GameDTO>().ForMember(gameDTO => gameDTO.Genres, opt => opt.MapFrom(game => game.Genres.Select(a => a._Genre)))
+                .ForMember(gameDTO => gameDTO.Languages, opt => opt.MapFrom(game => game.Languages.Select(a => a._Language)))
                 .ReverseMap();
 
             CreateMap<Game, CreateGameDTO>()

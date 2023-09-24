@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PC_ConsoleGames.Infrastructure.Entities
+﻿namespace PC_ConsoleGames.Core.Entities
 {
     public class GameLanguage
     {
@@ -12,7 +6,7 @@ namespace PC_ConsoleGames.Infrastructure.Entities
         public int GameId { get; set; }
         public int LanguageId { get; set; }
 
-        public Game? Game { get; set; }
-        public Language? Language { get; set; }
+        public Game? _Game { get; set; }
+        public Language? _Language { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using PC_ConsoleGames.Infrastructure.Entities;
+using PC_ConsoleGames.Core.Entities;
+using PC_ConsoleGames.Infrastructure.EntitiesConfiguration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,20 @@ using System.Threading.Tasks;
 
 namespace PC_ConsoleGames.Infrastructure.Data
 {
-    public class DBContext : IdentityDbContext<AppUser>
+    public class GameDBContext : IdentityDbContext<AppUser>
     {
-        public DBContext(DbContextOptions<DBContext> options) : base(options)
+        public GameDBContext(DbContextOptions<GameDBContext> options) : base(options)
         {
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new GameConfiguration());
+            modelBuilder.ApplyConfiguration(new GenreConfiguration());
+            modelBuilder.ApplyConfiguration(new LanguageConfiguration());
+            modelBuilder.ApplyConfiguration(new GameGenreConfiguration());
+            modelBuilder.ApplyConfiguration(new GameLanguageConfiguration());
             modelBuilder.Entity<Game>().HasData(SeedData.GetGames());
             modelBuilder.Entity<Genre>().HasData(SeedData.GetGenres());
             modelBuilder.Entity<Language>().HasData(SeedData.GetLanguages());

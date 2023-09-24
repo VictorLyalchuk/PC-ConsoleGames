@@ -18,10 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PC&amp;ConsoleGames.Core\PC&amp;ConsoleGames.Core.csproj" />
     <ProjectReference Include="..\PC&amp;ConsoleGames.Infrastructure\PC&amp;ConsoleGames.Infrastructure.csproj" />
   </ItemGroup>

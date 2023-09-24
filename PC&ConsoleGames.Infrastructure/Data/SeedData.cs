@@ -1,4 +1,4 @@
-﻿using PC_ConsoleGames.Infrastructure.Entities;
+﻿using PC_ConsoleGames.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -371,15 +371,14 @@ namespace PC_ConsoleGames.Infrastructure.Data
                 new GameLanguage(){GameId = 3, LanguageId = 8},
                 new GameLanguage(){GameId = 3, LanguageId = 10},
                 new GameLanguage(){GameId = 3, LanguageId = 11},
-                new GameLanguage(){GameId = 3, LanguageId = 14},
                 new GameLanguage(){GameId = 3, LanguageId = 12},
+                new GameLanguage(){GameId = 3, LanguageId = 14},
                 
                 new GameLanguage(){GameId = 4, LanguageId = 1},
                 new GameLanguage(){GameId = 4, LanguageId = 2},
                 new GameLanguage(){GameId = 4, LanguageId = 3},
                 new GameLanguage(){GameId = 4, LanguageId = 4},
                 new GameLanguage(){GameId = 4, LanguageId = 5},
-                new GameLanguage(){GameId = 4, LanguageId = 6},
                 new GameLanguage(){GameId = 4, LanguageId = 6},
                 new GameLanguage(){GameId = 4, LanguageId = 10},
                 new GameLanguage(){GameId = 4, LanguageId = 11},
@@ -455,8 +454,8 @@ namespace PC_ConsoleGames.Infrastructure.Data
                 new GameLanguage(){GameId = 10, LanguageId = 4},
                 new GameLanguage(){GameId = 10, LanguageId = 5},
                 new GameLanguage(){GameId = 10, LanguageId = 6},
-                new GameLanguage(){GameId = 10, LanguageId = 12},
                 new GameLanguage(){GameId = 10, LanguageId = 8},
+                new GameLanguage(){GameId = 10, LanguageId = 12},
                 new GameLanguage(){GameId = 10, LanguageId = 14},
 
                 new GameLanguage(){GameId = 11, LanguageId = 1},
@@ -499,7 +498,6 @@ namespace PC_ConsoleGames.Infrastructure.Data
                 new GameLanguage(){GameId = 14, LanguageId = 9},
                 new GameLanguage(){GameId = 14, LanguageId = 10},
                 new GameLanguage(){GameId = 14, LanguageId = 11},
-                new GameLanguage(){GameId = 14, LanguageId = 12},
                 new GameLanguage(){GameId = 14, LanguageId = 12},
                 new GameLanguage(){GameId = 14, LanguageId = 13},
                 new GameLanguage(){GameId = 14, LanguageId = 14},

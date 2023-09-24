@@ -5,9 +5,9 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PC&ConsoleGames.WebApi", "PC&ConsoleGames.WebApi\PC&ConsoleGames.WebApi.csproj", "{00363C2E-45FB-4FEB-8CC5-D8B07AFD9365}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PC&ConsoleGames.Core", "PC&ConsoleGames.Core\PC&ConsoleGames.Core.csproj", "{09C925FB-2CD2-4F82-89D4-73D3F8F0B610}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PC&ConsoleGames.Core", "PC&ConsoleGames.Core\PC&ConsoleGames.Core.csproj", "{09C925FB-2CD2-4F82-89D4-73D3F8F0B610}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PC&ConsoleGames.Infrastructure", "PC&ConsoleGames.Infrastructure\PC&ConsoleGames.Infrastructure.csproj", "{B55B68AE-2824-454C-AAF2-EFE9BB79F72E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PC&ConsoleGames.Infrastructure", "PC&ConsoleGames.Infrastructure\PC&ConsoleGames.Infrastructure.csproj", "{B55B68AE-2824-454C-AAF2-EFE9BB79F72E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

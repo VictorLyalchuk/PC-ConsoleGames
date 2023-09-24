@@ -15,10 +15,10 @@ namespace PC_ConsoleGames.Infrastructure
     {
         public static void AddDbContext(this IServiceCollection serviceCollection, string connection)
         {
-            serviceCollection.AddDbContext<DBContext>(options =>
+            serviceCollection.AddDbContext<GameDBContext>(options =>
             {
                 options.UseSqlServer(connection);
-                options.UseQueryTrackingBehavior(Microsoft.EntityFrameworkCore.QueryTrackingBehavior.NoTracking); //for 
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
         }
 
@@ -31,7 +31,7 @@ namespace PC_ConsoleGames.Infrastructure
         public static void AddIdentity(this IServiceCollection serviceCollection)
         {
             serviceCollection.AddIdentity<IdentityUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
-            .AddEntityFrameworkStores<DBContext>();
+            .AddEntityFrameworkStores<GameDBContext>();
         }
 
     }
