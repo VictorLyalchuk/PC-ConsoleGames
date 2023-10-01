@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PC_ConsoleGames.Infrastructure.Data
 {
-    public class GameDBContext : IdentityDbContext<AppUser>
+    public class GameDBContext : IdentityDbContext
     {
         public GameDBContext(DbContextOptions<GameDBContext> options) : base(options)
         {

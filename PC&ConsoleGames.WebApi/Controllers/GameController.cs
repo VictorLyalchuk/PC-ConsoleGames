@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PC_ConsoleGames.Core.DTOs;
 using PC_ConsoleGames.Core.Interfaces;
 
@@ -13,6 +15,7 @@ namespace PC_ConsoleGames.WebApi.Controllers
         {
             _game = game;
         }
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet]
         public async Task<IActionResult> Get()
         {

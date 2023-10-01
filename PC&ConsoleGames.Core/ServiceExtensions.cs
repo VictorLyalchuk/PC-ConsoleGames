@@ -17,6 +17,8 @@ namespace PC_ConsoleGames.Core
             servicesCollection.AddScoped<IGenreService, GenreService>();
 
             servicesCollection.AddScoped<ILanguageService, LanguageService>();
+
+            servicesCollection.AddScoped<IAccountService, AccountService>();
         }
         public static void AddValidators(this IServiceCollection servicesCollection)
         {

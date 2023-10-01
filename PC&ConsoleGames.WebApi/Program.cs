@@ -5,35 +5,17 @@ using PC_ConsoleGames.WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//get connection string
 string connection = builder.Configuration.GetConnectionString("SommeConnection") ?? throw new InvalidOperationException("Connection string 'SommeConnection' not found.");
 
 builder.Services.AddDbContext(connection); 
 
-// Add services to the container.
-
-//builder.Services.AddControllers()
-//    .AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles); 
-
 builder.Services.AddControllersWithCustomSchema();
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-
-//builder.Services.AddSwaggerGen(options =>
-//{
-//    options.MapType<TimeSpan>(() => new OpenApiSchema
-//    {
-//        Type = "string",
-//        Example = new OpenApiString("00:00:00")
-//    });
-//});
 
 builder.Services.AddSwaggerGenWithCustomSchema();
 
 builder.Services.AddIdentity();
-
-//added using extensions
 
 builder.Services.AddRepository();
 
@@ -43,9 +25,10 @@ builder.Services.AddAutoMapper();
 
 builder.Services.AddCustomServices();
 
+builder.Services.AddAuthenticationWithOptions(builder.Configuration);
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -55,6 +38,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseMiddleware<ErrorHandlerMiddleware>();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

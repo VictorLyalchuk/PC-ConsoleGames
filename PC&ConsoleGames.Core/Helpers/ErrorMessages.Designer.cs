@@ -61,11 +61,29 @@ namespace PC_ConsoleGames.Core.Helpers {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Invalid user or password.
+        /// </summary>
+        internal static string ErrorLoginorPassword {
+            get {
+                return ResourceManager.GetString("ErrorLoginorPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This game was not found by id.
         /// </summary>
         internal static string GameNotFoundByID {
             get {
                 return ResourceManager.GetString("GameNotFoundByID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Not Found By Id.
+        /// </summary>
+        internal static string UserNotFoundById {
+            get {
+                return ResourceManager.GetString("UserNotFoundById", resourceCulture);
             }
         }
     }
